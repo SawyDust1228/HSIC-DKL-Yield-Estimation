@@ -8,7 +8,7 @@
 
 ## Introduction:
 
-This repo contains implementation of our yield estimation algorithm, which described in the paper *"High Dimensional Yield Estimation using Shrinkage Deep Features and Maximization of Integral Entropy Reduction"*.
+This repo contains implementation of our yield estimation algorithm, which described in the paper *"High Dimensional Yield Estimation using Shrinkage Deep Features and Maximization of Integral Entropy Reduction"* (ASP-DAC 2023).
 
 The main work flow of this work is given by the following figures.
 
