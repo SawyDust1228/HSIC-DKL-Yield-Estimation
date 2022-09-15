@@ -67,10 +67,7 @@ class AdaptiveSampling:
         return self.train_x[indeces], indeces, y_raw[indeces]
 
     def initialize_q_batch(self, X: Tensor, Y: Tensor, n: int, eta = 1.0, alpha = 0.7, beta = 0.05) -> Tensor:
-
         max_val, max_idx = torch.max(Y, dim=0)
-        #print(Y)
-
         alpha_pos = Y >= alpha * max_val
         while alpha_pos.sum() < n:
             alpha = (1 - beta) * alpha # changed
@@ -80,7 +77,6 @@ class AdaptiveSampling:
         idcs = alpha_pos_idcs[torch.multinomial(weights, n)]
         if max_idx not in idcs:
             idcs[-1] = max_idx
-        # idcs = sort(Y, n)
         return X[idcs], torch.tensor(idcs)
     
 

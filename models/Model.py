@@ -50,8 +50,7 @@ class MyGP():
         self.model = GPRegressionModel(self.train_x, self.train_y, self.likelihood, data_dim, data_dim_out)
         self.model.to(device)
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=0.01)
-
-        # "Loss" for GPs - the marginal log likelihood
+        
         self.mll = gpytorch.mlls.ExactMarginalLogLikelihood(self.likelihood, self.model)
         self.training_iterations = training_iterations
         self.state_dict = None

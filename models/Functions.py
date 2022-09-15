@@ -23,11 +23,9 @@ def getAnswer(answer, result):
     print(f"[RATE] {sum} / {len(answer)}")
     return sum
 
-
 def normalize(value):
     value = (value - np.min(value)) / (np.max(value) - np.min(value))
     return value
-
 
 def toy_function(train_x):
     return torch.sin(train_x * (2 * math.pi)) + torch.randn(train_x.size()) * math.sqrt(0.04)
@@ -39,5 +37,3 @@ def get_yield(y, threshold):
             sum += 1
     return 1 - sum / y.shape[0]
 
-
-# def EI(model, X, Xsamples):
