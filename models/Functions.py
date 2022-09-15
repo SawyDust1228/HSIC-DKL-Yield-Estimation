@@ -1,3 +1,10 @@
+##
+# @author Shuo Yin
+# @date   July 2022
+# @brief  Functions
+# @email  yinshuo991229@gmail.com
+##
+
 import numpy as np
 import math
 import torch

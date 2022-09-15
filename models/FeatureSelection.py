@@ -1,3 +1,10 @@
+##
+# @author Shuo Yin
+# @date   July 2022
+# @brief  Feature Selection
+# @email  yinshuo991229@gmail.com
+##
+
 from pyHSICLasso import HSICLasso
 import torch
 import numpy as np

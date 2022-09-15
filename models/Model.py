@@ -1,3 +1,10 @@
+##
+# @author Shuo Yin
+# @date   July 2022
+# @brief  Deep Kernel Learning Model
+# @email  yinshuo991229@gmail.com
+##
+
 from statistics import mean
 import torch
 import gpytorch
@@ -22,16 +29,12 @@ class LargeFeatureExtractor(torch.nn.Sequential):
 class GPRegressionModel(gpytorch.models.ExactGP):
     def __init__(self, train_x, train_y, likelihood, data_dim, data_dim_out):
         super(GPRegressionModel, self).__init__(train_x, train_y, likelihood)
-        # self.c1 = nn.Parameter(torch.rand(data_dim, dtype=torch.float32) * 3 + 0.1)  
-        # self.c0 = nn.Parameter(torch.rand(data_dim, dtype=torch.float32) * 3 + 0.1)
         self.feature_extractor = LargeFeatureExtractor(data_dim=data_dim, data_dim_out=data_dim_out)
         self.mean_module = gpytorch.means.ConstantMean()
         self.covar_module = gpytorch.kernels.ScaleKernel(gpytorch.kernels.LinearKernel(ard_num_dims=data_dim_out) + gpytorch.kernels.MaternKernel(ard_num_dims=data_dim_out))
         self.scale_to_bounds = gpytorch.utils.grid.ScaleToBounds(lower_bound=-1., upper_bound=1.)
 
     def forward(self, x):
-        # k = Kumaraswamy(concentration1=self.c1, concentration0=self.c0)
-        # x = k.icdf(x)
         x = self.feature_extractor(x)
         x = self.scale_to_bounds(x)  # Make the NN values "nice"
         mean = self.mean_module(x)

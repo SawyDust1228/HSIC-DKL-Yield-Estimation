@@ -1,3 +1,9 @@
+##
+# @author Shuo Yin
+# @date   July 2022
+# @brief  Entropy Reduction Acquizition Function
+# @email  yinshuo991229@gmail.com
+##
 
 import torch
 from torch import device, nn
