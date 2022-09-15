@@ -1,7 +1,7 @@
 ##
 # @author Shuo Yin
 # @date   July 2022
-# @brief  Entropy Reduction Acquizition Function
+# @brief  Entropy Reduction Acquisition Function
 # @email  yinshuo991229@gmail.com
 ##
 
