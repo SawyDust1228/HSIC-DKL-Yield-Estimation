@@ -33,7 +33,7 @@ git clone git@github.com:SawyDust1228/HSIC-DKL-Yield-Estimation.git
 You can use the following command to  install all the necessary packages.
 
 ```shell
-git pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 
