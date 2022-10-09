@@ -8,7 +8,7 @@
 from pyHSICLasso import HSICLasso
 import torch
 import numpy as np
-from sklearn.decomposition import PCA, KernelPCA, FactorAnalysis, FastICA
+from sklearn.decomposition import PCA, KernelPCA
 class FeatureSelection:
 
     def __init__(self) -> None:

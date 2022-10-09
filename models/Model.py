@@ -5,15 +5,9 @@
 # @email  yinshuo991229@gmail.com
 ##
 
-from statistics import mean
 import torch
 import gpytorch
-import botorch
 from tqdm import tqdm
-from botorch.distributions import Kumaraswamy
-from torch import dropout, nn
-from torch.utils.data import TensorDataset, DataLoader
-
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
