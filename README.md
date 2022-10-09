@@ -14,8 +14,6 @@ The main work flow of this work is given by the following figure.
 
 ![](overflow.png)
 
-
-
 ## Dependency
 
 + Python
